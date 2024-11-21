@@ -1,0 +1,101 @@
+Aqui está um exercício sobre a criação de tabelas conectadas para um supermercado:
+
+Exercício: Sistema de Gestão de Supermercado
+
+Crie um sistema para gerenciar um supermercado. O sistema deve ter as seguintes tabelas:
+
+1. Tabela produtos: Armazena informações sobre os produtos vendidos no supermercado.
+
+id_produto (inteiro, chave primária, autoincremento)
+
+nome_produto (texto)
+
+descricao (texto)
+
+preco (decimal)
+
+quantidade_estoque (inteiro)
+
+
+
+2. Tabela clientes: Armazena informações sobre os clientes do supermercado.
+
+id_cliente (inteiro, chave primária, autoincremento)
+
+nome_cliente (texto)
+
+email (texto)
+
+telefone (texto)
+
+endereco (texto)
+
+
+
+3. Tabela vendas: Armazena informações sobre as vendas realizadas.
+
+id_venda (inteiro, chave primária, autoincremento)
+
+id_cliente (inteiro, chave estrangeira referenciando clientes)
+
+data_venda (data)
+
+total (decimal)
+
+
+
+4. Tabela itens_venda: Armazena os produtos que fazem parte de cada venda.
+
+id_item (inteiro, chave primária, autoincremento)
+
+id_venda (inteiro, chave estrangeira referenciando vendas)
+
+id_produto (inteiro, chave estrangeira referenciando produtos)
+
+quantidade (inteiro)
+
+preco_unitario (decimal)
+
+
+
+5. Tabela funcionarios: Armazena informações sobre os funcionários do supermercado.
+
+id_funcionario (inteiro, chave primária, autoincremento)
+
+nome_funcionario (texto)
+
+cargo (texto)
+
+salario (decimal)
+
+data_admissao (data)
+
+
+
+6. Tabela caixas: Registra informações sobre os caixas do supermercado.
+
+id_caixa (inteiro, chave primária, autoincremento)
+
+id_funcionario (inteiro, chave estrangeira referenciando funcionarios)
+
+data_abertura (data)
+
+data_fechamento (data)
+
+
+
+
+Observações:
+
+Relacionamentos:
+
+A tabela vendas está relacionada à tabela clientes, já que cada venda é realizada por um cliente.
+
+A tabela itens_venda armazena os produtos vendidos em cada venda, referenciando as tabelas vendas e produtos.
+
+A tabela caixas está associada aos funcionarios, indicando quem é o responsável pelo caixa.
+
+
+
+Esse exercício envolve a criação de tabelas para um sistema de supermercado, que gerencia desde produtos até vendas, itens vendidos e funcionários.
+
