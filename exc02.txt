@@ -1,0 +1,111 @@
+Aqui está um exercício sobre um sistema de aluguel de veículos:
+
+Exercício: Sistema de Aluguel de Veículos
+
+Crie um sistema para gerenciar o aluguel de veículos. O sistema deve ter as seguintes tabelas:
+
+1. Tabela veiculos: Armazena informações sobre os veículos disponíveis para aluguel.
+
+id_veiculo (inteiro, chave primária, autoincremento)
+
+modelo (texto)
+
+marca (texto)
+
+ano (inteiro)
+
+placa (texto)
+
+tipo (texto) - exemplo: "Carro", "Moto", "Van"
+
+preco_diaria (decimal) - preço por dia de aluguel
+
+
+
+2. Tabela clientes: Armazena informações sobre os clientes que alugam os veículos.
+
+id_cliente (inteiro, chave primária, autoincremento)
+
+nome (texto)
+
+email (texto)
+
+telefone (texto)
+
+documento_identidade (texto)
+
+
+
+3. Tabela alugueis: Armazena informações sobre os aluguéis realizados pelos clientes.
+
+id_aluguel (inteiro, chave primária, autoincremento)
+
+id_cliente (inteiro, chave estrangeira referenciando clientes)
+
+id_veiculo (inteiro, chave estrangeira referenciando veiculos)
+
+data_inicio (data)
+
+data_fim (data)
+
+status (texto) - exemplo: "Ativo", "Concluído", "Cancelado"
+
+
+
+4. Tabela pagamentos: Armazena informações sobre os pagamentos realizados pelos clientes.
+
+id_pagamento (inteiro, chave primária, autoincremento)
+
+id_aluguel (inteiro, chave estrangeira referenciando alugueis)
+
+data_pagamento (data)
+
+valor_pago (decimal)
+
+metodo_pagamento (texto) - exemplo: "Cartão de Crédito", "Débito", "Boleto"
+
+
+
+5. Tabela funcionarios: Armazena informações sobre os funcionários responsáveis pelo gerenciamento dos aluguéis.
+
+id_funcionario (inteiro, chave primária, autoincremento)
+
+nome (texto)
+
+cargo (texto)
+
+salario (decimal)
+
+data_admissao (data)
+
+
+
+6. Tabela manutencao_veiculos: Armazena as informações sobre a manutenção dos veículos.
+
+id_manutencao (inteiro, chave primária, autoincremento)
+
+id_veiculo (inteiro, chave estrangeira referenciando veiculos)
+
+data_manutencao (data)
+
+descricao (texto)
+
+custo (decimal)
+
+
+
+
+Observações:
+
+Relacionamentos:
+
+A tabela alugueis está relacionada à tabela clientes (quem fez o aluguel) e à tabela veiculos (qual veículo foi alugado).
+
+A tabela pagamentos está relacionada à tabela alugueis, indicando qual aluguel foi pago e como foi o pagamento.
+
+A tabela manutencao_veiculos está relacionada à tabela veiculos, registrando as manutenções realizadas nos veículos.
+
+
+
+Esse exercício cria um sistema para gerenciar aluguel de veículos, desde o cadastro de veículos, clientes e funcionários até a realização dos aluguéis, pagamentos e manutenção dos veículos.
+
