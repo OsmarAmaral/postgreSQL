@@ -109,3 +109,14 @@ WHERE quantidade_estoque > 20;
 SELECT nome_cliente, total
 FROM clientes, vendas
 WHERE clientes.id_cliente = vendas.id_cliente;
+
+SELECT nome_produto
+FROM produtos
+WHERE preco > 100.00;
+
+SELECT nome_cliente, nome_produto
+FROM vendas, clientes, produtos, itens_venda
+WHERE data_venda BETWEEN '2023-10-01' and '2023-10-03' and
+clientes.id_cliente = vendas.id_cliente and
+vendas.id_venda = itens_venda.id_venda and 
+produtos.id_produto = itens_venda.id_produto;
