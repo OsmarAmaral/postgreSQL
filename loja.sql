@@ -61,10 +61,10 @@ INSERT INTO clientes (nome_cliente, email, telefone, endereco) VALUES
 ('Ana Costa', 'ana.costa@example.com', '11765432109', 'Rua D, 101');
 
 INSERT INTO vendas (id_cliente, data_venda, total) VALUES
-(1, '2023-10-01', 59.80),  -- João Silva
-(2, '2023-10-02', 199.90), -- Maria Oliveira
-(1, '2023-10-03', 29.90),  -- João Silva
-(3, '2023-10-04', 89.90);   -- Carlos Santos
+(1, '2023-10-01', 59.80), 
+(2, '2023-10-02', 199.90), 
+(1, '2023-10-03', 29.90),  
+(3, '2023-10-04', 89.90);  
 
 INSERT INTO funcionarios (nome_funcionario, cargo, salario, data_admissao) VALUES
 ('Pedro Almeida', 'Vendedor', 2500.00, '2022-01-15'),
@@ -73,12 +73,10 @@ INSERT INTO funcionarios (nome_funcionario, cargo, salario, data_admissao) VALUE
 ('Fernanda Souza', 'Estoquista', 2200.00, '2022-11-20');
 
 INSERT INTO caixas (id_funcionario, data_abertura, data_fechamento) VALUES
-(1, '2023-10-01', '2023-10-01'),  -- Caixa aberto por Pedro Almeida
-(2, '2023-10-02', '2023-10-02'),  -- Caixa aberto por Lucia Ferreira
-(3, '2023-10-03', NULL),           -- Caixa aberto por Roberto Lima (ainda aberto)
-(4, '2023-10-04', NULL);    -- Caixa aberto por Fernanda Souza (ainda aberto)
-
--- Consultas Simples
+(1, '2023-10-01', '2023-10-01'), 
+(2, '2023-10-02', '2023-10-02'), 
+(3, '2023-10-03', NULL),           
+(4, '2023-10-04', NULL);    
 
 SELECT nome_produto, preco
 FROM produtos;
@@ -89,8 +87,6 @@ WHERE nome_cliente LIKE '%Silva%';
 
 SELECT SUM(total)
 FROM vendas;
-
--- Consultas com junções
 
 SELECT nome_cliente, total
 FROM clientes, vendas
@@ -106,4 +102,10 @@ VALUES ('Mochila', 'Mochila de Viagem', 149.90, 25);
 INSERT INTO vendas (data_venda, total)
 VALUES ('2024-11-22', 89.90);
 
+SELECT nome_produto, quantidade_estoque
+FROM produtos
+WHERE quantidade_estoque > 20;
 
+SELECT nome_cliente, total
+FROM clientes, vendas
+WHERE clientes.id_cliente = vendas.id_cliente;
